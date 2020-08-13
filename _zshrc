@@ -57,3 +57,5 @@ unset ZSH
 ## Ctrl-p/Ctrl-n for Emacs mode
 bindkey -M emacs '^p' history-substring-search-up
 bindkey -M emacs '^n' history-substring-search-down
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

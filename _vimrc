@@ -9,13 +9,13 @@
 source ~/.vread
 
 """ MISC settings
-" save and reload ~/.vimrc
-nnoremap <silent> <leader>v :w<CR>:source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+" save and reload $MYVIMRC
+nnoremap <silent> <leader>v :w<CR>:source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 " C-j to insert a newline
 nnoremap <NL> i<CR><ESC>
 " refresh if file in Vim is updated by external program
 noremap <silent><F5> :checktime<CR>:exe ":echo 'file refreshed'"<CR>
-inoremap <silent><F5> <C-O>:checktime<CR>:exe ":echo 'file refreshed'"<CR>
+inoremap <silent><F5> <ESC>:checktime<CR>:exe ":echo 'file refreshed'"<CR>
 
 """ Insert-mode keybindings
 inoremap <silent><C-x>0 <C-o>:hide<CR>
@@ -37,6 +37,7 @@ cnoremap <C-b> <Left>
 cnoremap <C-f> <Right>
 cnoremap <M-b> <S-Left>
 cnoremap <M-f> <S-Right>
+cnoremap <c-d> <del>
 cnoremap <silent><C-g> <ESC><ESC>
 
 """ terminal mode
@@ -82,7 +83,7 @@ augroup MyTermGroup
   autocmd TermOpen,BufWinEnter,WinEnter term://* startinsert
 augroup END
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" {{{
 " https://github.com/junegunn/vim-plug
 call plug#begin('~/.vim/bundle')
 
@@ -100,6 +101,22 @@ cnoreabbrev Translate TranslateW
 Plug 'endel/vim-github-colorscheme'
 " colorscheme github
 colorscheme desert
+
+Plug 'lifepillar/vim-cheat40'
+
+Plug 'axvr/zepl.vim'
+
+Plug 'sk1418/HowMuch'
+
+augroup MyZeplGroup
+  autocmd!
+  autocmd FileType python     let b:repl_config = { 'cmd': 'python3' }
+  autocmd FileType javascript let b:repl_config = { 'cmd': 'node' }
+  autocmd FileType clojure    let b:repl_config = { 'cmd': 'clj' }
+  autocmd FileType scheme     let b:repl_config = { 'cmd': 'rlwrap csi' }
+  autocmd FileType lisp       let b:repl_config = { 'cmd': 'sbcl' }
+  autocmd FileType julia      let b:repl_config = { 'cmd': 'julia' }
+augroup END
 
 " tag list
 Plug 'majutsushi/tagbar'
@@ -196,6 +213,7 @@ let g:vimtex_quickfix_latexlog = {'default' : 0}
 set conceallevel=1
 let g:tex_conceal='abdmg'
 let g:vimtex_compiler_callback_hooks = ['MyTestHook']
+let g:tex_flavor = 'latex'
 function! MyTestHook(status)
   echom a:status
 endfunction
@@ -214,7 +232,7 @@ Plug 'hotoo/pangu.vim'
 Plug 'junegunn/vader.vim'
 
 call plug#end()
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""" }}}
 
 """ always follow symlink {{{
 " https://github.com/blueyed/dotfiles/blob/ab2850675bbfcf0db18dbf81a31b90e65aaae7f8/vimrc#L1247-L1278
@@ -240,7 +258,7 @@ function! MyFollowSymlink(...)
   let &shm=sshm
 
   " Re-init fugitive.
-  call fugitive#detect(resolvedfile)
+  call FugitiveDetect(resolvedfile)
   if &modifiable
     " Only display a note when editing a file, especially not for `:help`.
     redraw  " Redraw now, to avoid hit-enter prompt.
@@ -340,7 +358,7 @@ omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
 
 " Use <TAB> for select selections ranges, needs server support, like: coc-tsserver, coc-python
-nmap <silent> <TAB> <Plug>(coc-range-select)
+" nmap <silent> <TAB> <Plug>(coc-range-select)
 xmap <silent> <TAB> <Plug>(coc-range-select)
 
 " Use `:Format` to format current buffer
@@ -373,7 +391,7 @@ nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 """ }}}
 
 " forbid simultaneous edits; make it default to readonly
-augroup NoSimultaneousEdits
+augroup MySwapEditGroup
   autocmd!
   autocmd SwapExists * let v:swapchoice = 'o'
   autocmd SwapExists * echo 'Duplicate edit session (readonly)'
@@ -381,7 +399,6 @@ augroup NoSimultaneousEdits
   autocmd SwapExists * echohl None
 augroup END
 
-cnoreabbrev wqa wa
 cnoreabbrev mks exec printf('mksession! %s%s%s', "~/.vim/ss-", strftime("%Y-%b-%d-%H-%M-%S"), ".vim")
 cnoreabbrev mksession exec printf('mksession! %s%s%s', "~/.vim/ss-", strftime("%Y-%b-%d-%H-%M-%S"), ".vim")
 

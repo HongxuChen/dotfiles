@@ -42,7 +42,7 @@ set tabpagemax=5              " only 5 tabs
 set nocompatible              " Don't be compatible with vi
 set tabpagemax=15             " max number of tabs
 set number                    " Display line numbers
-set numberwidth=1             " using only 1 column (and 1 space) while possible
+set relativenumber            " set relativenumber
 set title                     " show title in console title bar
 set wildmenu                  " Menu completion in command mode on <Tab>
 set wildmode=list:longest     " list and match longest
@@ -126,6 +126,7 @@ autocmd BufRead,BufNewFile SCons* set filetype=python
 
 """ netrw settings
 let g:netrw_hide = 1
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
 let g:netrw_rmdir_cmd = 'ssh USEPORT HOSTNAME rm -rf'
 let g:netrw_keepdir=0           " make netrw follow Vim's `current directory`
 let g:netrw_localrmdir='rm -rf' " remove local directory recursively
@@ -140,10 +141,12 @@ let g:loaded_rrhelper = 1
 let g:loaded_spellfile_plugin = 1
 let g:loaded_vimballPlugin = 1
 let g:loaded_tutor_mode_plugin = 1
-" let g:loaded_tarPlugin = 1
-" let g:loaded_gzip = 1
-" let g:loaded_netrwPlugin = 1
-" let g:loaded_zipPlugin = 1
+
+""" disable some providers
+let g:loaded_perl_provider = 0
+let g:loaded_ruby_provider = 0
+let g:loaded_python_provider = 0
+let g:loaded_node_provider = 0
 
 " open netrw when no args supplied
 augroup VimStartup

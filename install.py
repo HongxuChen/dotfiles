@@ -52,8 +52,8 @@ class MLevel(object):
 
 CUR_DIR = os.path.abspath(os.path.dirname(__file__))
 BAK_DIR = os.path.join(CUR_DIR, ".BAK")
-PLT = platform.system()  # Darwin/Linux/FreeBSD
-SUPPORTED_PLT = ['Darwin', 'Linux', 'FreeBSD']
+PLT = platform.system()  # Darwin/Linux
+SUPPORTED_PLT = ['Darwin', 'Linux']
 if PLT not in SUPPORTED_PLT:
     print(u"Unknown Platform: {}, supported: {}".format(
         PLT, SUPPORTED_PLT), file=sys.stderr)

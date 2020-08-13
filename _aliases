@@ -37,9 +37,6 @@ alias scala="command scala -Dscala.color=true"
 
 alias sudo='sudo -H '
 
-# alias scala='command scala -i ~/.scalarc'
-# alias sss='env JAVA_OPTS="-Xms512m -Xmx2g" scala'
-
 alias r_cp='rsync -poghb --backup-dir=/tmp/rsync -e /dev/null --progress --'
 alias r_mv='rsync -a --progress -h --remove-source-files'
 alias r_update='rsync -avu --progress -h'
@@ -55,11 +52,8 @@ alias my_py_path='python3 -c "import sys;print(\"\\n\".join(sys.path))"'
 alias urlencode='python3 -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
 alias urldecode='python3 -c "import sys, urllib as ul; print ul.unquote_plus(sys.argv[1])"'
 alias yaml2json="python3 -c 'import sys, yaml, json; json.dump(yaml.load(open(sys.argv[1])), sys.stdout, indent=2)'"
-alias xml_pretty='xmllint --format'
 alias grt='cd "$(git rev-parse --show-toplevel)"'
 alias indent='command indent -kr -ci2 -cli2 -i2 -l80 -nut' #Google style
-# alias less='colorless'
-# alias diff='colordiff'
 alias more='less'
 alias info='man'
 alias adl="aria2c -s16 -x16"
@@ -84,9 +78,6 @@ alias v_cc1_ofast='clang /dev/null -xc -Ofast - -o /dev/null -\#\#\# 2>&1 | tr "
 alias v_clang_llvm='clang -xc /dev/null -c -mllvm -print-all-options'
 alias buuc='(echo "brew update" && brew update && echo "brew upgrade" && brew upgrade && echo "brew cleanup" && brew cleanup)'
 alias rdm_res='tail -f /tmp/rdm_answer'
-
-# alias lab_rdp='rdesktop -g 1024x768 -f -u pub -p 123 -r sound:local -r clipboard:PRIMARYCLIPBOARD -r disk:home=/home/hongxu 192.168.1.108 &>/dev/null & disown'
-alias pat_ssh='ssh -X root@pat.sce.ntu.edu.sg'
 
 alias dud='du -d 1 -h'
 alias duf='du -sh *'
