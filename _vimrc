@@ -106,6 +106,8 @@ Plug 'lifepillar/vim-cheat40'
 
 Plug 'axvr/zepl.vim'
 
+Plug 'sk1418/HowMuch'
+
 augroup MyZeplGroup
   autocmd!
   autocmd FileType python     let b:repl_config = { 'cmd': 'python3' }
@@ -211,6 +213,7 @@ let g:vimtex_quickfix_latexlog = {'default' : 0}
 set conceallevel=1
 let g:tex_conceal='abdmg'
 let g:vimtex_compiler_callback_hooks = ['MyTestHook']
+let g:tex_flavor = 'latex'
 function! MyTestHook(status)
   echom a:status
 endfunction
@@ -396,7 +399,6 @@ augroup MySwapEditGroup
   autocmd SwapExists * echohl None
 augroup END
 
-cnoreabbrev wqa wa
 cnoreabbrev mks exec printf('mksession! %s%s%s', "~/.vim/ss-", strftime("%Y-%b-%d-%H-%M-%S"), ".vim")
 cnoreabbrev mksession exec printf('mksession! %s%s%s', "~/.vim/ss-", strftime("%Y-%b-%d-%H-%M-%S"), ".vim")
 

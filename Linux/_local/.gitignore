@@ -1,5 +1,5 @@
-bin
-lib
+bin/
+lib/
 
 share/evolution/
 share/gsettings-data-convert
@@ -10,6 +10,8 @@ share/session_migration-ubuntu
 share/unity-settings-daemon/
 share/unity-webapps/
 share/zeitgeist/
-share/gnome-software
+share/gnome-software/
+share/powershell/
 state/bap/
 share/systemd/
+
