@@ -16,6 +16,8 @@ export OCAML_TOPLEVEL_PATH="${MY_ROOT}/ib/toplevel"
 export MY_OCAML_BIN_PATH="${MY_OPAM}/bin"
 export MY_CABAL_PATH="${HOME}/.cabal"
 
+export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+
 export MY_BREW_PREFIX=/usr/local
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:/usr/sbin:/sbin:/usr/bin:/bin:/opt/local/bin"
 export PATH="${MY_ANDROID_SDK}/sdk/platform-tools:$PATH"
@@ -30,6 +32,7 @@ export PATH="/usr/local/opt/binutils/bin:$PATH"
 export PATH="${MY_BREW_PREFIX}/bin:${MY_BREW_PREFIX}/sbin:$PATH"
 export PATH="${MY_BREW_PREFIX}/opt/llvm/bin:$PATH"
 export PATH="/usr/local/texlive/2017/bin/x86_64-darwin:$PATH"
+export PATH="${JAVA_HOME}/bin:$PATH"
 
 source ${MY_BREW_PREFIX}/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 

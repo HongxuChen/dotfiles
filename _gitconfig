@@ -98,13 +98,10 @@
 [web]
 	browser = google-chrome
 [gui]
-	editor = vim
+	editor = nvim
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
 [pretty]
 	custom = %C(magenta)%h%C(red)%d %C(yellow)%ar %C(green)%s %C(yellow)(%an)
 [filter "media"]
@@ -114,4 +111,4 @@
 [fetch]
 	prune = true
 [credential]
-	helper = git-credential-manager
+	; helper = git-credential-manager

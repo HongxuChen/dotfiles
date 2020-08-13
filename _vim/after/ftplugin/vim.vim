@@ -1,4 +1,4 @@
-setlocal formatoptions=tq
+setlocal formatoptions=
 setlocal foldmethod=marker
 setlocal softtabstop=2
 setlocal tabstop=2
