@@ -19,6 +19,7 @@ if [[ $OSTYPE == "linux-gnu" ]]; then
     alias intellij='nohup ~/tools/intellij/bin/idea.sh &>/dev/null &'
     alias goland='nohup ~/tools/goland/bin/goland.sh &>/dev/null &'
     alias pcloud='nohup /usr/bin/pcloud &>/dev/null &'
+    alias vimdiff='nvim -d'
 fi
 
 if [[ $OSTYPE == "darwin"* ]] || [[ $OSTYPE == "freebsd"* ]]; then

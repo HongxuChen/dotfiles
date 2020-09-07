@@ -69,9 +69,9 @@ Settings
 Fundamentals
 ------------
 
-1. **Vim**(managed by [vundle](https://github.com/gmarik/Vundle.vim))(`~/.vimrc`, `~/.vim`)
+1. **NeoVim**(managed by [vim-plug](https://github.com/junegunn/vim-plug))(`~/.vimrc`, `~/.vim`)
 
-1. [Zsh](http://www.zsh.org/)(modified from [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh))
+1. [Zsh](http://www.zsh.org/)(derived from [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh))
 
     - relevant files:
         - `~/.profile`
@@ -83,7 +83,6 @@ Fundamentals
 1. [**IPython**](http://ipython.org/)(especially for [sh](http://ipython.org/ipython-doc/dev/interactive/shell.html)/[nb](http://ipython.org/notebook.html) profile)(`~/.ipython/`)
 
     - for **sh** profile (check command alias: `p_sh`), *lots* of packages are pre-imported(installed via `pip`)
-    - ipython-notebook (check command alias: `p_nb`) is based on **sh** profile, a few [extensions](https://github.com/ipython-contrib/IPython-notebook-extensions/wiki) are in `~/.ipython/extensions/`
 
 1. [**sbt**](http://www.scala-sbt.org/)(`~/.sbt`, `~/.sbtrc`)
 
@@ -119,8 +118,6 @@ They are *not* exactly linux only, but *I* tend not to use them on Mac OSX. They
 - **mplayer**(`~/.mplayer`)
     - Mac has better players
 
-- [**Valgrind**](http://valgrind.org/)(`~/.valgrindrc`)
-
 - [**aptitude**](https://wiki.debian.org/Aptitude)(`~/.aptitude/`)
 
 - **bash**(`~/.bashrc`)
@@ -130,11 +127,6 @@ They are *not* exactly linux only, but *I* tend not to use them on Mac OSX. They
 
 Mac Specific
 ------------
-
-- **GVim**(`~/.gvimrc`)
-
-    - for brewed [**MacVim**](https://code.google.com/p/macvim/);
-    - Linux Vimers doesn't need GUI :smile:.
 
 - [**slate**](https://github.com/jigish/slate)(`~/.slate`)
 
