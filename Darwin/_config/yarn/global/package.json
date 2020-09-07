@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "electron": "^1.7.9",
+    "electron": "^9.1.0",
     "electron-forge": "^4.1.2",
     "emoj": "^2.0.0",
     "eslint": "^4.8.0",
