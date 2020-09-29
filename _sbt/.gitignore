@@ -1,4 +1,11 @@
-0.13/staging/
+staging/
 boot/
 launchers/
 preloaded/
+templates/
+target/
+
+*.lock
+*.jar
+*.so
+*.pid

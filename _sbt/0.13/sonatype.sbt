@@ -1,1 +1,0 @@
-../../../private/sonatype.sbt
