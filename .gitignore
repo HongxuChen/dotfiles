@@ -28,7 +28,6 @@ plug.vim
 _PyCharm30
 *.pyo
 .*.s[a-w][a-z]
-_sbt/
 Session.vim
 *.swp
 tags/
