@@ -199,6 +199,8 @@ let g:ale_linters = {
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+Plug 'cespare/vim-toml'
+
 """ latex
 Plug 'lervag/vimtex'
 Plug 'mhinz/neovim-remote'

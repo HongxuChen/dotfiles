@@ -3,6 +3,8 @@
 
 MY_ROOT=~/RESEARCH
 MY_HOME_BIN=~/.bin
+MY_PY_PATH="$HOME/Library/Python/3.8"
+
 export GOPATH=~/gocode
 
 export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
@@ -16,6 +18,7 @@ export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PA
 export PATH="${MY_BREW_PREFIX}/bin:${MY_BREW_PREFIX}/sbin:$PATH"
 export PATH="/usr/local/texlive/2020/bin/x86_64-darwin:$PATH"
 export PATH="${JAVA_HOME}/bin:$PATH"
+export PATH="${MY_PY_PATH}/bin:$PATH"
 
 source ${MY_BREW_PREFIX}/share/zsh-history-substring-search/zsh-history-substring-search.zsh
 
